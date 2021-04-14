@@ -10,7 +10,7 @@ print(fun_kolvo(klyuchi))
 znacheniya = fun_slova()
 
 if len(klyuchi) == len(znacheniya):
-    slovar = dict(zip(klyuchi, znacheniya)) # создаём словарь из двух массивов
+    slovar = fun_slovar(zip(klyuchi, znacheniya)) # создаём словарь из двух массивов
     print(slovar)
 else:
     print("Ошибка: Ошибка!")
