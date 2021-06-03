@@ -1,0 +1,51 @@
+    import math
+    import random
+
+    class Calc:
+        def put_numbers(self, n1, n2 = 0):
+            self.x = n1
+            self.y = n2
+
+        def operacii(self, sign):
+            if sign in ('-', '+', '*', '/', '^'):
+                if sign == '+':
+                    return print(self.x + self.y)
+                elif sign == '-':
+                    return print(self.x - self.y)
+                elif sign == '*':
+                    return print(self.x * self.y)
+                elif sign == '/':
+                    if self.y == 0:
+                        return print("Ошибка: Деление на ноль!")
+                    else:
+                        return print(self.x / self.y)
+                elif sign == '^':
+                    return print(math.pow(self.x, self.y))
+
+            elif sign in ("модуль", "!", "арккосинус"):
+                if sign == "модуль":
+                    return print(math.fabs(self.x))
+                elif sign == '!':
+                    return print(math.factorial(self.x))
+                elif sign == "арккосинус":
+                    if self.x >= -1 and self.x <= 1:
+                        return print(math.acos(self.x))
+                    else:
+                        return print("Ваше число не принадлежит промежутку от -1 до 1")
+                elif sign == "рандом":
+                    return print(random.uniform(0, 10000))
+                else:
+                    return print("Ошибка: Неверный знак операции!\n")
+
+    while True:
+        print("Команда 0 завершит работу программы\n")
+        sign = input("Введите знак/команду (-, +, *, /, ^, модуль, !, арккосинус, рандом): ")
+        if sign == '0':
+            break
+        calc = Calc()
+        if sign in ('-', '+', '*', '/', '^'):
+            calc.put_numbers(float(input("x=")), float(input("y=")))
+        elif sign in ("модуль", "!", "арккосинус"):
+            calc.put_numbers(float(input("x=")))
+
+calc.operacii(sign)
