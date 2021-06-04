@@ -9,4 +9,4 @@ if len(klyuchi)==len(znacheniya):
     slovar = dict(zip(klyuchi, znacheniya)) # создаём словарь из двух массивов
     print(slovar)
 else:
-    print("Ошибка: Ошибка!")
+    print("Ошибка: Количество слов в списках не совпадает!")
